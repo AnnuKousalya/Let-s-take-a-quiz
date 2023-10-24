@@ -9,7 +9,6 @@
 body {
     font-family: 'sans-serif', sans-serif;
     background-image: url("https://th.bing.com/th/id/OIP.jbhZjQfmi66pyo9tpVlTTgHaEG?pid=ImgDet&rs=1");
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +16,7 @@ body {
 }
 .container{
     width: 750px;
-    background-color: rgb(36, 35, 45);
+    background-color: rgb(128, 115, 240);
     box-shadow:0 0 50px 0 rgba(0,0, 0, 0.2);
     min-height: 350px;
     padding:50px 50px ;
@@ -84,9 +83,9 @@ body {
 }
 
 .optionBox span{
-    background-color:rgb(219, 222, 223);
+    background-color:rgb(175, 215, 228);
     border-radius: 10px;
-    color:rgb(32, 28, 28);
+    color:rgb(1, 12, 3);
     border:1px solid,#444;
     padding:10px 15px;
     
@@ -174,7 +173,7 @@ body {
 
 }
 span:hover{
-    background-color: rgb(24, 21, 37);
+    background-color: rgb(119, 176, 234);
 }
 
 
