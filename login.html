@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="l.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title">
+      Login Form
+    </div>
+    <form action="#">
+      <div class="field">
+        <input type="text" id="email" required>
+        <label>Email Address</label>
+      </div>
+      <div class="field">
+        <input type="password" id="password" required>
+        <label>Password</label>
+      </div>
+      <div class="content">
+        <div class="checkbox">
+          <input type="checkbox" id="remember-me" checked="checked">
+          <label for="remember-me" style="color:white">Remember me</label>
+        </div>
+        <div class="pass-link">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      <div class="field">
+        <input type="submit" value="Login" onclick="log()">
+      </div>
+      <div class="signup-link">
+        Not a member? <a href="signup.html">Signup now</a>
+      </div>
+    </form>
+  </div>
+  <script>
+    function log(){
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+        if((email=="annu@gmail.com" && password=="annu6") || (email=="dhana@yahoo.com" && password=="dhana6") || (email=="triveni@gmail.com" && password=="triveni6")){
+          alert("Login Successful :)");
+
+           
+          window.open('questions.html');
+          alert("Login Successful : Click OK to start  quiz)");
+        }else{
+            alert("Invalid Email or Password");
+            return;
+        }
+    }
+  </script>
+</body>
+</html>

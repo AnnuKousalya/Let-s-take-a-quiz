@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="l.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title">
+      Signup Form
+    </div>
+    <form action="#">
+      <div class="field">
+        <input type="text" required>
+        <label>Email Address</label>
+      </div>
+      <div class="field">
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+      <div class="content">
+        <div class="pass-link">
+          <a href="#">Terms and Conditions</a>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="remember-me" checked="checked">
+            <label for="remember-me" style="color:white">I Agree</label>
+          </div>
+      </div>
+      <div class="field">
+        
+        <input type="submit" value="Sign up" onclick="window.open('questions.html',EventTarget)" onclick="aler">
+        <script>
+                function aler(){
+                  alert("Signup Successful : Click OK to start  quiz");
+                }    
+        </script>;
+      </div>
+      <div class="signup-link">
+        Already have an account : <a href="login.html">Login now</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
