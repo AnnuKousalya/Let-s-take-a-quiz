@@ -1,95 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PICT - CTF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        * {
+  font-size: 62, 5%;
+  box-sizing: border-box;
+  margin: 0;
+}
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href=" bootstrap4-neon-glow.min.css">
-    <link rel="stylesheet" href=" main.css">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
-    
+body {
+    background-image: url("https://th.bing.com/th/id/OIP.jbhZjQfmi66pyo9tpVlTTgHaEG?pid=ImgDet&rs=1");
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 40rem;
+  height: 43rem;
+  background-color: antiquewhite;
+  -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
+  box-shadow: 0px 5px 15px 8px #e4e7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
+}
+
+.share {
+  width: 4.5rem;
+  height: 3rem;
+  background-color: #f55e77;
+  border: 0;
+  border-bottom: 0.2rem solid #c0506a;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.share:active {
+  border-bottom: 0;
+}
+
+.share i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.7rem;
+  color: #141a39;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+#leaderboard {
+  width: 100%;
+  position: relative;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #141a39;
+  cursor: default;
+}
+
+tr {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.2rem;
+}
+
+tr:not(:first-child):hover {
+  background-color: #fff;
+  transform: scale(1.1);
+  -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
+  box-shadow: 0px 5px 15px 8px #e4e7fb;
+}
+
+tr:nth-child(odd) {
+  background-color: antiquewhite;
+}
+
+tr:nth-child(1) {
+  color: #fff;
+}
+
+td {
+  height: 5rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.number {
+  width: 1rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.name {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.points {
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.points:first-child {
+  width: 10rem;
+}
+
+.gold-medal {
+  height: 3rem;
+  margin-left: 1.5rem;
+}
+
+.ribbon {
+  width: 42rem;
+  height: 5.5rem;
+  top: -0.5rem;
+  background-color: #5b9ee5;
+  position: absolute;
+  left: -1rem;
+  -webkit-box-shadow: 0px 15px 11px -6px #7a7a7d;
+  box-shadow: 0px 15px 11px -6px #7a7a7d;
+}
+
+.ribbon::before {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.8rem;
+  left: 0.35rem;
+  transform: rotate(45deg);
+  background-color: #5c5be5;
+  position: absolute;
+  z-index: -1;
+}
+
+.ribbon::after {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.8rem;
+  right: 0.35rem;
+  transform: rotate(45deg);
+  background-color: #5c5be5;
+  position: absolute;
+  z-index: -1;
+}
+
+#buttons {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.exit {
+  width: 11rem;
+  height: 3rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #7e7f86;
+  border: 0;
+  background-color: #fff;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.exit:hover {
+  border: 0.1rem solid #5b9ee5;
+}
+
+.continue {
+  width: 11rem;
+  height: 3rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #5b97e5;
+  border: 0;
+  border-bottom: 0.2rem solid #387ab8;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.continue:active {
+  border-bottom: 0;
+}
+
+@media (max-width: 740px) {
+    * {
+      font-size: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    * {
+      font-size: 55%;
+    }
+}
+
+@media (max-width: 390px) {
+    * {
+      font-size: 45%;
+    }
+}
+    </style>
   </head>
   <body>
-
-    <div class="navbar-dark text-white">
-      <div class="container">
-        <nav class="navbar px-0 navbar-expand-lg navbar-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a href="index.html" class="pl-md-0 p-3 text-light">Home</a>
-            </div>
-          </div>
-        </nav>
-  
+    <main>
+      <div id="header">
+        <h1>Ranking</h1>
+        <button class="share">
+          <i class="ph ph-share-network"></i>
+        </button>
       </div>
-    </div>
-    <h1 class="display-2" style="text-align: center">Leaderboard!<span class="vim-caret">͏͏&nbsp;</span></h1>
-    <div class="lead mb-3 text-mono text-success" style="text-align: center">
-        Where the world gets Ranked!
-    </div>
-    <div class="jumbotron bg-transparent mb-0 radius-0">
-      <div class="container">
-          <div class="row">
-            <div class="col-xl-6">
-
-            </div>
-            <div class="col-xl-12">
-                    <table class="table table-hover table-dark">
-                            <thead>
-                              <tr class="bg-dark">
-                                <th>#</th>
-                                <th>Username</th>
-                                <th>Challenges Solved</th>
-                                <th>Time Taken</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>@MrRobot</td>
-                                <td>9</td>
-                                <td>00:45:30</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>@ByomkeshBakshi</td>
-                                <td>6</td>
-                                <td>00:55:26</td>
-                                </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>@Sherlock22B</td>
-                                <td>5</td>
-                                <td>01:05:30</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">4</th>
-                                <td>@SheldorTheConquerer</td>
-                                <td>2</td>
-                                <td>00:10:30</td>
-                              </tr>
-                            </tbody>
-                          </table>
-            </div>
-                  
-          </div>
+      <div id="leaderboard">
+        <div class="ribbon"></div>
+        <table>
+          <tr>
+            <td class="number">1</td>
+            <td class="name"> N Himaja</td>
+            <td class="points">10 </td>
+          </tr>
+          <tr>
+            <td class="number">2</td>
+            <td class="name">A Kousalya</td>
+            <td class="points">9</td>
+          </tr>
+          <tr>
+            <td class="number">3</td>
+            <td class="name">B Hoshitha</td>
+            <td class="points">7</td>
+          </tr>
+          <tr>
+            <td class="number">4</td>
+            <td class="name">A Jashwanth</td>
+            <td class="points">6</td>
+          </tr>
+          <tr>
+            <td class="number">5</td>
+            <td class="name">A Kousik</td>
+            <td class="points">5</td>
+          </tr>
+        </table>
+        <div id="buttons">
+         <a href="index.html"><button class="continue">Home</button></a> 
+        </div>
       </div>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </main>
   </body>
 </html>
